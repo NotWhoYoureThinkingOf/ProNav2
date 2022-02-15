@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navBtn {
+    @apply hidden h-6 md:inline-flex cursor-pointer hover:scale-125 transition-all duration-150 ease-out;
+  }
+
+  .btn {
+    @apply h-7 hover:scale-125 cursor-pointer transition-all duration-150 ease-out;
+  }
+
+  .toggle-switch {
+    @apply w-12 h-6 rounded-full p-1 bg-gray-400 dark:bg-gray-600 relative cursor-pointer transition-colors duration-500 ease-in focus:outline-none focus:ring-2 focus:ring-blue-700 dark:focus:ring-blue-600 focus:border-transparent
+  }
+
+  .toggle {
+    @apply rounded-full w-4 h-4 bg-blue-600 dark:bg-blue-500 relative ml-0 dark:ml-6 pointer-events-none transition-all duration-300 ease-out
+  }
+
+  .hoverBtn {
+    @apply p-[10px] bg-white bg-opacity-10 rounded-[5px] text-[1rem] font-bold transition cursor-pointer hover:bg-[#555]
+  }
+
+  .prcBtn {
+    @apply flex justify-center items-center border-2 border-white rounded-[10px] transition hover:bg-[#555] focus:bg-[#555]
+  }
+
+  .prcBtnTitle {
+    @apply text-[2.5rem] pointer-events-none
+  }
+
+  .pwdSettingsBtn {
+    @apply bg-[#333] rounded-lg h-full flex justify-center items-center text-[2.2rem] font-bold cursor-pointer transition hover:bg-[#555]
+  }
+
+  .pwdCycleBtn {
+    @apply h-full border-2 border-[rgba(255,255,255,0.2)] rounded-lg cursor-pointer flex flex-col justify-center items-center
+  }
+}

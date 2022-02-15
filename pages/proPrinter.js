@@ -23,7 +23,7 @@ const proPrinter = () => {
           alt="Pro95"
         />
       </div>
-      <h1 className="absolute top-2 z-[999] text-white bg-black w-auto p-5 border-4 rounded-[20px] text-xl">
+      <h1 className="absolute top-2 z-[999] text-white bg-black w-auto p-5 border-4 rounded-[20px] text-base max-w-[53%] 2xl:text-xl">
         2/15/22: ProWash UI in usable state. Printer and ProCure need to be
         adjusted due to incompatibility from transfer of old UI code. Will also
         look into adding Pro S and ProCure 2 as time allows.

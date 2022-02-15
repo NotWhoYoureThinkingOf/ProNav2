@@ -19,7 +19,7 @@ const MainScreen = () => {
         </div>
         {/* mainScreen__containerTop */}
         <div className="text-center space-y-5">
-          <h1 className="text-4xl font-bold sm:text-6xl md:text-8xl">
+          <h1 className="text-4xl font-bold md:text-[4rem] 2xl:text-8xl">
             Welcome to the Pro Navigation Guide!
           </h1>
           <h2 className="text-xl sm:text-3xl md:text-4xl">

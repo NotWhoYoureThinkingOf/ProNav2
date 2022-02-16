@@ -13,7 +13,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  env: {
-    GOOGLE_ANALYTICS_ID: "G-B3RYXB3P1N",
-  },
 };

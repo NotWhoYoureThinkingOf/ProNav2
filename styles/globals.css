@@ -22,7 +22,7 @@
   }
 
   .hoverBtn {
-    @apply p-[10px] bg-white bg-opacity-10 rounded-[5px] text-[1rem] font-bold transition cursor-pointer hover:bg-[#555]
+    @apply p-[10px] bg-white bg-opacity-10 rounded-[5px] text-[1rem] font-bold transition cursor-pointer hover:bg-[#444]
   }
 
   .prcBtn {

@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
       </Script>
 
       <RecoilRoot>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </RecoilRoot>
     </>
   );

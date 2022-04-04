@@ -22,7 +22,7 @@ const MainSlider = () => {
             <a className="Slider1 h-full flex justify-center items-end">
               <img
                 src="/Pro95.png"
-                className="object-contain max-h-[90%] 3xl:scale-[80%]"
+                className="object-contain max-h-[90%] xl:scale-[75%] 3xl:scale-[80%]"
               />
             </a>
           </Link>
@@ -30,7 +30,7 @@ const MainSlider = () => {
             <a className="Slider1 h-full flex justify-center items-end">
               <img
                 src="/ProS.png"
-                className="object-contain max-h-[90%] 3xl:scale-[80%] self-end"
+                className="object-contain max-h-[90%] xl:scale-[75%] 3xl:scale-[80%] self-end"
               />
             </a>
           </Link>
@@ -38,7 +38,7 @@ const MainSlider = () => {
             <a className="Slider2 !flex justify-self-center self-end">
               <img
                 src="/ProWash.png"
-                className="object-contain max-h-[450px] 3xl:scale-[80%]"
+                className="object-contain max-h-[450px] xl:scale-[75%] 3xl:scale-[80%]"
               />
             </a>
           </Link>
@@ -46,7 +46,7 @@ const MainSlider = () => {
             <a className="Slider2 !flex justify-self-center self-end">
               <img
                 src="/ProCure.png"
-                className="object-contain max-h-[450px] 3xl:scale-[75%]"
+                className="object-contain max-h-[450px] xl:scale-[75%] 3xl:scale-[80%]"
               />
             </a>
           </Link>
@@ -54,7 +54,7 @@ const MainSlider = () => {
             <a className="Slider2 !flex justify-self-center self-end">
               <img
                 src="/ProCure2.png"
-                className="object-contain max-h-[450px] 3xl:scale-[80%] self-end"
+                className="object-contain max-h-[450px] xl:scale-[75%] 3xl:scale-[80%] self-end"
               />
             </a>
           </Link>

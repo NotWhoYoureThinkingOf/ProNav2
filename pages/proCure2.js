@@ -17,7 +17,7 @@ const proCure2 = () => {
 
   return (
     <div className="ProCure2 font-Roboto relative w-full h-screen overflow-hidden flex justify-center bg-[#111]">
-      <div className="absolute bg-black border-white border-4 top-1/2 left-[25%] z-50 rounded-lg text-white p-6">
+      <div className="absolute bg-black border-white border-4 top-1/2 left-[10%] z-50 rounded-lg text-white p-6">
         <h2 className="text-4xl text-center font-semibold">
           Still Under <br /> Construction
         </h2>

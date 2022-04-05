@@ -6,7 +6,7 @@ export default function Home() {
     <div className="font-Roboto max-h-screen h-screen">
       <Head>
         <title>ProNav Tailwind</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/sprintray-icon.png" />
       </Head>
 
       <MainScreen />

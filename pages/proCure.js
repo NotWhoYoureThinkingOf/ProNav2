@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
+import Head from "next/head";
 import Link from "next/link";
 import { Build, Repeat } from "@material-ui/icons";
 
 const proCure = () => {
   return (
     <div className="font-Roboto relative w-full h-screen overflow-hidden flex justify-center bg-[#111] text-white">
+      <Head>
+        <title>ProCure</title>
+      </Head>
       <Link href="/">
         <a className="absolute z-50 left-2 top-2">Back To Welcome Screen</a>
       </Link>

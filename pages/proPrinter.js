@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Head from "next/head";
 import Link from "next/link";
 import ProPrinterMain from "../components/ProPrinter/ProPrinterMain";
 import ProPrinterNav from "../components/ProPrinter/ProPrinterNav";
@@ -16,6 +17,9 @@ const proPrinter = () => {
 
   return (
     <div className="ProPrinter font-Roboto relative w-full h-screen overflow-hidden flex justify-center bg-[#111]">
+      <Head>
+        <title>Pro Printer</title>
+      </Head>
       <Link href="/">
         <a className="ProPrinter-BackToWelcome absolute z-50 left-2 top-2 text-white">
           Back To Welcome Screen

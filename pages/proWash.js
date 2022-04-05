@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from "next/head";
 import { useRecoilState } from "recoil";
 import { proWashNavState } from "../atoms/proWashNavAtom";
 import { proWashCycleState } from "../atoms/proWashCycleAtom";
@@ -24,6 +25,9 @@ const proWash = () => {
 
   return (
     <div className="PWD font-Roboto relative w-full h-screen overflow-hidden flex justify-center bg-[#111] text-white">
+      <Head>
+        <title>ProWash</title>
+      </Head>
       <Link href="/">
         <a className="absolute z-50 left-2 top-2">Back To Welcome Screen</a>
       </Link>

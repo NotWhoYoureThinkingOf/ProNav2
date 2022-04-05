@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import {
   HomeOutlined,
   PersonOutlineOutlined,
@@ -22,6 +23,9 @@ const proCure2 = () => {
           Still Under <br /> Construction
         </h2>
       </div>
+      <Head>
+        <title>ProCure 2</title>
+      </Head>
       <Link href="/">
         <a className="ProCure2-BackToWelcome absolute z-50 left-2 top-2 text-white">
           Back To Welcome Screen

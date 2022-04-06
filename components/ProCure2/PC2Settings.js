@@ -1,6 +1,5 @@
 import { InvertColors } from "@material-ui/icons";
 import { useState } from "react";
-import PC2ResinButton from "./PC2ResinButton";
 
 const PC2Settings = () => {
   const [mute, setMute] = useState(false);
@@ -58,7 +57,7 @@ const PC2Settings = () => {
           <InvertColors
             style={{ fontSize: "2.9rem", color: "#CCCCCC", opacity: ".5" }}
           />
-          <h2 className="text-[30px] font-semibold my-[.35rem] -translate-y-1">
+          <h2 className="text-[30px] font-semibold mt-[.35rem] mb-[.2rem] -translate-y-1">
             Materials
           </h2>
           <div className="text-[24px] text-center">
@@ -68,7 +67,7 @@ const PC2Settings = () => {
         </div>
       </div>
       <div className="ProCure2-Cleaning">
-        <div className="flex items-center justify-center bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] cursor-pointer rounded-lg h-[78px] transition mt-8 hover:brightness-125">
+        <div className="flex items-center justify-center bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] cursor-pointer rounded-lg h-[78px] transition mt-9 hover:brightness-125">
           <h2 className="text-[32px] font-semibold tracking-[.5px]">
             Check for Updates
           </h2>

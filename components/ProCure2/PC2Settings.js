@@ -11,7 +11,7 @@ const PC2Settings = () => {
       <div className="ProCure2-Mute flex items-center gap-6 px-2 pt-2 pb-10">
         <div
           className={`ProCure2-toggle mute-switch w-[100px] flex items-center bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] transition ${
-            mute && "from-[#2BC25F] to-[#1B7D3D]"
+            mute && "!from-[#2BC25F] !to-[#1B7D3D]"
           }`}
           onClick={() => setMute(!mute)}
         >

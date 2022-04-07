@@ -25,7 +25,7 @@ const PC2Wifi = () => {
         <h3 className="text-[50px] font-semibold">Wi-Fi</h3>
         <div
           className={`ProCure2-toggle mute-switch w-[100px] flex items-center bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] transition ${
-            wifi && "from-[#2BC25F] to-[#1B7D3D]"
+            wifi && "!from-[#2BC25F] !to-[#1B7D3D]"
           }`}
           onClick={() => setWifi(!wifi)}
         >

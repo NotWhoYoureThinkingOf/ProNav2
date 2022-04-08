@@ -13,6 +13,7 @@ const PC2Account = () => {
   const [languageScreen, setLanguageScreen] = useRecoilState(
     proCure2LanguageScreenState
   );
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   useEffect(() => {
     setPassword(null);
@@ -56,19 +57,28 @@ const PC2Account = () => {
               <>
                 <div className="ProCure2-Account-Email bg-white border-2 border-[#28B358] rounded-lg flex items-center justify-between px-4 h-[78px]">
                   <input
-                    className="text-[#919B94] text-[24px] outline-none"
+                    className="text-[24px] text-black outline-none"
                     placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="ProCure2-Account-Password bg-white border-2 border-[#28B358] rounded-lg flex items-center justify-between px-4 h-[78px]">
                   <input
-                    type="password"
-                    className="text-[#919B94] text-[24px] outline-none"
+                    type={!passwordVisible ? "password" : "text"}
+                    className="text-[24px] text-black  outline-none"
                     placeholder="Password"
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                  <Visibility style={{ fontSize: "2rem", color: "#919B94" }} />
+                  <div
+                    className={`cursor-pointer ${
+                      passwordVisible && "opacity-20"
+                    }`}
+                    onClick={() => setPasswordVisible(!passwordVisible)}
+                  >
+                    <Visibility
+                      style={{ fontSize: "2rem", color: "#919B94" }}
+                    />
+                  </div>
                 </div>
                 <div
                   className="h-[78px] bg-gradient-to-b from-[#2BC25F] to-[#1B7D3D] rounded-lg flex items-center justify-center cursor-pointer transition hover:brightness-125"

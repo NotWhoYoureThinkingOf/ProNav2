@@ -73,12 +73,12 @@ const PC2Wifi = () => {
             connected={wifi && connectedNetwork === "Network 6"}
           />
         </div>
-        <div className="" onClick={() => setConnectedNetwork("Network 7")}>
+        {/* <div className="" onClick={() => setConnectedNetwork("Network 7")}>
           <PC2WifiNetwork
             name="Network 7"
             connected={wifi && connectedNetwork === "Network 7"}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

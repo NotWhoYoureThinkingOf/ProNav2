@@ -11,23 +11,25 @@ const PC2WifiNetwork = ({ name, connected }) => {
   const connectToNetwork = () => {
     setEnteringPassword(false);
     setConnectedToNetwork(true);
+    setNetwork({ name });
   };
 
   console.log("connectedToNetwork", connectedToNetwork);
+  console.log("network", network);
 
   return (
     <div
       className={`ProCure2-Network flex flex-col px-1 py-4 cursor-pointer ${
         connected && "border-b-[1px] border-[rgba(51,51,51,0.3)]"
       }`}
-      onClick={() => setEnteringPassword(!enteringPassword)}
+      onClick={() => setEnteringPassword(true)}
     >
       <div className="flex items-center justify-between">
         <div className="gap-2 flex items-center">
           <Wifi style={{ fontSize: "2.75rem" }} />
           <p className="text-[28px] font-medium">{name}</p>
         </div>
-        {connected && connectedToNetwork && (
+        {connected && (
           <div className="bg-[#28B358] rounded-full flex justify-center items-center p-[.4rem]">
             <Check style={{ fontSize: "1.2rem" }} />
           </div>

@@ -1,8 +1,18 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import ProSHome from "../components/ProS/ProSHome";
+import ProSHeader from "../components/ProS/ProSHeader";
+import { useRecoilState } from "recoil";
+import { proSNavState } from "../atoms/proSNavAtom";
+import ProSHistory from "../components/ProS/ProSHistory";
+import ProSQueue from "../components/ProS/ProSQueue";
+import ProSSettings from "../components/ProS/ProSSettings";
+import ProSExternal from "../components/ProS/ProSExternal";
 
 const proS = () => {
+  const [menu, setMenu] = useRecoilState(proSNavState);
+
   return (
     <div className="ProS font-Roboto relative w-full h-screen overflow-hidden flex justify-center bg-[#111]">
       <Head>
@@ -21,10 +31,20 @@ const proS = () => {
         />
       </div>
       <div className="ProS-ScreenCentered h-full w-full flex justify-center items-center">
+        <div className="ProS-WIP absolute left-[2%] bg-black border-2 border-white rounded-lg p-10 text-center">
+          <h3 className="text-[3rem] leading-[3.5rem] text-white">
+            Work In <br /> Progress
+          </h3>
+        </div>
         {/* Printer Screen */}
-        <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[550px] w-[800px] border-4 border-white overflow-y-scroll relative no-scrollbar">
-          <div className="text-white flex justify-center items-center h-full text-4xl">
-            <h2>Under Construction</h2>
+        <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+          <ProSHeader />
+          <div className="h-[86.5%]">
+            {menu === "print" && <ProSHome />}
+            {menu === "history" && <ProSHistory />}
+            {menu === "queue" && <ProSQueue />}
+            {menu === "settings" && <ProSSettings />}
+            {menu === "external" && <ProSExternal />}
           </div>
         </div>
       </div>

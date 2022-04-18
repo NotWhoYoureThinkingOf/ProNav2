@@ -26,11 +26,11 @@ const PC2Settings = () => {
       <div className="ProCure2-Info flex justify-between px-5 py-4 border-t-2 border-b-2 border-[#CCCCCC] border-opacity-50">
         <div className="ProCure2-Serial text-center">
           <p className="opacity-50 text-[18px]">Serial Number</p>
-          <h3 className="text-[24px] font-bold">SRC123456789</h3>
+          <h3 className="text-[24px] font-bold">PC2A0121500359</h3>
         </div>
         <div className="ProCure2-IP text-center">
           <p className="opacity-50 text-[18px]">IP Address</p>
-          <h3 className="text-[24px] font-bold">00.00.00.00</h3>
+          <h3 className="text-[24px] font-bold">10.00.00.62</h3>
         </div>
       </div>
       <div className="ProCure2-Cleaning border-b-2 border-[#CCCCCC] border-opacity-50">
@@ -46,10 +46,10 @@ const PC2Settings = () => {
             src="/Software.png"
             className="h-[35px] w-[44.29px] object-contain"
           />
-          <h2 className="text-[30px] font-semibold my-2">Software</h2>
+          <h2 className="text-[30px] font-semibold my-3">Software</h2>
           <div className="text-[24px] text-center">
             <p>Version</p>
-            <p>00.00.00</p>
+            <p>1.00.99</p>
           </div>
         </div>
         <div className="ProCure2-Software-Center border-l-2 border-[#CCCCCC] border-opacity-50 h-[170px]"></div>
@@ -62,7 +62,7 @@ const PC2Settings = () => {
           </h2>
           <div className="text-[24px] text-center">
             <p>Last Update</p>
-            <p>10/25/21</p>
+            <p>04/14/2022</p>
           </div>
         </div>
       </div>

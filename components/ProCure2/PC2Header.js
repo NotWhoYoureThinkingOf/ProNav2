@@ -18,7 +18,7 @@ const PC2Header = () => {
 
   return (
     !languageScreen && (
-      <div className="ProCure2-Header flex gap-2">
+      <div className="ProCure2-Header flex gap-2 sticky top-0">
         <div
           className={`flex-[0.25] flex justify-center bg-gradient-to-b ${
             menu !== "main"

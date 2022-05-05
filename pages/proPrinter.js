@@ -32,10 +32,10 @@ const proPrinter = () => {
           alt="Pro95"
         />
       </div>
-      <h1 className="ProPrinter-DevMessage absolute top-2 z-[999] text-white bg-black w-auto p-5 border-4 rounded-[20px] text-base max-w-[53%] 2xl:text-xl">
+      {/* <h1 className="ProPrinter-DevMessage absolute top-2 z-[999] text-white bg-black w-auto p-5 border-4 rounded-[20px] text-base max-w-[53%] 2xl:text-xl">
         3/1/22: ProWash UI in usable state. Fixed some of the printer menus.
         Still need to update a few more. ProCure not updated yet.
-      </h1>
+      </h1> */}
       <div className="ProPrinter-Logo absolute top-[85%] z-[91]">
         <img src="" alt="" />
       </div>

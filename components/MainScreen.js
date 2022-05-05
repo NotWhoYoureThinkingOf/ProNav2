@@ -1,14 +1,42 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import MainSlider from "./MainSlider";
+import MainIntro from "./MainIntro";
+import gsap from "gsap/dist/gsap";
+import { useRecoilState } from "recoil";
+import { proIntroStatusState } from "../atoms/proIntroStatusAtom";
 
 const MainScreen = () => {
   const [darkMode, setDarkMode] = useState(true);
+  const [intro, setIntro] = useRecoilState(proIntroStatusState);
+  const videoplayer = useRef(null);
+
+  useEffect(() => {
+    gsap.to(videoplayer.current, {
+      opacity: 0,
+      pointerEvents: "none",
+      delay: 3.5,
+      duration: 1,
+      onComplete: () => setIntro(false),
+    });
+  });
 
   return (
     // mainScreen
     <div className={`Pro-Main min-h-screen h-full ${darkMode && "dark"}`}>
+      {/* video */}
+      {intro && (
+        <div
+          ref={videoplayer}
+          className="Pro-Main-Video absolute z-50 w-full h-full bg-black"
+        >
+          <div className="relative">
+            <MainIntro />
+          </div>
+        </div>
+      )}
+
       {/* mainScreen__container */}
       <div className="Pro-Main-Container relative justify-center grid 4xl:gap-10 p-12 h-full dark:bg-[#111] dark:text-white">
         {/* darkmode toggle */}

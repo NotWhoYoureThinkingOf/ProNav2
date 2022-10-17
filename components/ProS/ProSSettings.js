@@ -9,6 +9,8 @@ import ProSSettingsMenuOption from "./ProSSettingsMenuOption";
 import { useRecoilState } from "recoil";
 import { proSSettingsNavState } from "../../atoms/ProSSettingsNavAtom";
 import ProSGeneral from "./ProSGeneral";
+import ProSConnectivity from "./ProSConnectivity";
+import ProSPrinter from "./ProSPrinter";
 
 const ProSSettings = () => {
   const [settingsMenu, setSettingsMenu] = useRecoilState(proSSettingsNavState);
@@ -45,8 +47,10 @@ const ProSSettings = () => {
             />
           </div>
         </div>
-        <div className="ProS-Settings-Right flex-[.69] overflow-y-scroll">
+        <div className="ProS-Settings-Right flex-[.69] overflow-y-scroll my-[3.25rem]">
           {settingsMenu === "General" && <ProSGeneral />}
+          {settingsMenu === "Printer" && <ProSPrinter />}
+          {settingsMenu === "Connectivity" && <ProSConnectivity />}
         </div>
       </div>
     </div>

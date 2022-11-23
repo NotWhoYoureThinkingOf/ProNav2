@@ -14,6 +14,7 @@ import ProSConnectivity from "./ProSConnectivity";
 import ProSPrinter from "./ProSPrinter";
 import { ProSSoftware } from "./ProSSoftware";
 import { ProSAccount } from "./ProSAccount";
+import { ProSBusinessHours } from "./ProSBusinessHours";
 
 const ProSSettings = () => {
   const [settingsMenu, setSettingsMenu] = useRecoilState(proSSettingsNavState);
@@ -58,6 +59,7 @@ const ProSSettings = () => {
           {settingsMenu === "Printer" && <ProSPrinter />}
           {settingsMenu === "Connectivity" && <ProSConnectivity />}
           {settingsMenu === "Software" && <ProSSoftware />}
+          {settingsMenu === "Business Hours" && <ProSBusinessHours />}
           {settingsMenu === "Account" && <ProSAccount />}
         </div>
       </div>

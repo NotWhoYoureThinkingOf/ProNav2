@@ -15,7 +15,7 @@ const ProSSettingsMenuOption = ({ Icon, submenu, img, Custom }) => {
 
   return (
     <div
-      className={`flex items-center gap-4 border-2 border-[#555555] cursor-pointer w-full ${
+      className={`flex items-center gap-4 border-2 border-[#555555] cursor-pointer w-full pr-1 ${
         menuText !== settingsMenu && "border-opacity-0 opacity-40"
       } rounded-lg h-[78px] overflow-hidden w-[90%]`}
       onClick={() => setSettingsMenu(selectedMenu.current.innerText)}
@@ -33,7 +33,12 @@ const ProSSettingsMenuOption = ({ Icon, submenu, img, Custom }) => {
         </div>
       )}
 
-      <p ref={selectedMenu} className={`flex-[.75] text-[30px] font-bold `}>
+      <p
+        ref={selectedMenu}
+        className={`flex-[.75] ${
+          submenu !== "Business Hours" ? "text-[30px]" : "text-[28px]"
+        } font-bold `}
+      >
         {submenu}
       </p>
     </div>

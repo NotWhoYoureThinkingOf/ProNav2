@@ -5,13 +5,16 @@ import ProSHome from "../components/ProS/ProSHome";
 import ProSHeader from "../components/ProS/ProSHeader";
 import { useRecoilState } from "recoil";
 import { proSNavState } from "../atoms/proSNavAtom";
+import { proSScreenState } from "../atoms/proSScreenAtom";
 import ProSHistory from "../components/ProS/ProSHistory";
 import ProSQueue from "../components/ProS/ProSQueue";
 import ProSSettings from "../components/ProS/ProSSettings";
 import ProSExternal from "../components/ProS/ProSExternal";
+import { ProSNetworkList } from "../components/ProS/ProSNetworkList";
 
 const proS = () => {
   const [menu, setMenu] = useRecoilState(proSNavState);
+  const [screen, setScreen] = useRecoilState(proSScreenState);
 
   return (
     <div className="ProS font-Roboto relative w-full h-screen overflow-hidden flex justify-center bg-[#111]">
@@ -37,16 +40,23 @@ const proS = () => {
           </h3>
         </div>
         {/* Printer Screen */}
-        <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
-          <ProSHeader />
-          <div className="h-[86.5%]">
-            {menu === "print" && <ProSHome />}
-            {menu === "history" && <ProSHistory />}
-            {menu === "queue" && <ProSQueue />}
-            {menu === "settings" && <ProSSettings />}
-            {menu === "external" && <ProSExternal />}
+        {screen === "normal" && (
+          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+            <ProSHeader />
+            <div className="h-[86.5%]">
+              {menu === "print" && <ProSHome />}
+              {menu === "history" && <ProSHistory />}
+              {menu === "queue" && <ProSQueue />}
+              {menu === "settings" && <ProSSettings />}
+              {menu === "external" && <ProSExternal />}
+            </div>
           </div>
-        </div>
+        )}
+        {screen === "Wifi_List" && (
+          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+            <ProSNetworkList />
+          </div>
+        )}
       </div>
     </div>
   );

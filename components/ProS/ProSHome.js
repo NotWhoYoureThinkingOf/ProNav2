@@ -1,8 +1,12 @@
 import { PersonOutline, Wifi } from "@material-ui/icons";
 import React from "react";
 import ProSHomeButton from "./ProSHomeButton";
+import { useRecoilState } from "recoil";
+import { proSSSIDState } from "../../atoms/proSSSIDAtom";
 
 const ProSHome = () => {
+  const [network, setNetwork] = useRecoilState(proSSSIDState);
+
   return (
     <div className="ProSHome w-full h-full">
       <div className="ProSHome-Container w-full h-full flex gap-4">
@@ -58,7 +62,7 @@ const ProSHome = () => {
             />
             <ProSHomeButton
               Icon={<Wifi style={{ fontSize: "3rem" }} />}
-              text="Network SSID"
+              text={network}
             />
           </div>
         </div>

@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import { useRecoilState } from "recoil";
+import { proSSSIDState } from "../../atoms/proSSSIDAtom";
+import { proSScreenState } from "../../atoms/proSScreenAtom";
 
 const ProSConnectivity = () => {
   const [local, setLocal] = useState(true);
   const [wireless, setWireless] = useState(true);
   const [IP, setIP] = useState(true);
+  const [network, setNetwork] = useRecoilState(proSSSIDState);
+  const [screen, setScreen] = useRecoilState(proSScreenState);
 
   return (
     <div className="ProS-Connectivity px-3">
@@ -63,11 +68,10 @@ const ProSConnectivity = () => {
                   Network
                 </h3>
                 <h3 className="text-[1.5rem] font-semibold mb-3">
-                  Network SSID:{" "}
-                  <span className="font-normal">Dental Office Wifi</span>
+                  Network SSID: <span className="font-normal">{network}</span>
                 </h3>
                 <div className="ProS-Connectivity-Reboot-Buttons flex flex-col gap-4">
-                  <div className="ProS-Nickname-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] cursor-pointer transition hover:brightness-125">
+                  <div className="ProS-Forget-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] cursor-pointer transition hover:brightness-125" onClick={() => setScreen("Wifi_List")}>
                     <p className="text-[24px]">Forget this Network</p>
                   </div>
                 </div>

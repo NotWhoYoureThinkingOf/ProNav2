@@ -3,9 +3,11 @@ import React from "react";
 import ProSHomeButton from "./ProSHomeButton";
 import { useRecoilState } from "recoil";
 import { proSSSIDState } from "../../atoms/proSSSIDAtom";
+import { proSScreenState } from "../../atoms/proSScreenAtom";
 
 const ProSHome = () => {
   const [network, setNetwork] = useRecoilState(proSSSIDState);
+  const [screen, setScreen] = useRecoilState(proSScreenState);
 
   return (
     <div className="ProSHome w-full h-full">
@@ -49,21 +51,25 @@ const ProSHome = () => {
               Icon={<PersonOutline style={{ fontSize: "3.2rem" }} />}
               text="user@email.com"
             />
-            <ProSHomeButton
-              Icon={
-                <img
-                  src="/Resin-Tank.svg"
-                  className="w-[47.32px] h-[32.05px]"
-                />
-              }
-              text="Selected Resin"
-              status="HEALTHY"
-              SelectedResin
-            />
-            <ProSHomeButton
-              Icon={<Wifi style={{ fontSize: "3rem" }} />}
-              text={network}
-            />
+            <div className="" onClick={() => setScreen("tank_status")}>
+              <ProSHomeButton
+                Icon={
+                  <img
+                    src="/Resin-Tank.svg"
+                    className="w-[47.32px] h-[32.05px]"
+                  />
+                }
+                text="SprintRay Die and Model 2 Gray"
+                status="HEALTHY"
+                SelectedResin
+              />
+            </div>
+            <div className="">
+              <ProSHomeButton
+                Icon={<Wifi style={{ fontSize: "3rem" }} />}
+                text={network}
+              />
+            </div>
           </div>
         </div>
       </div>

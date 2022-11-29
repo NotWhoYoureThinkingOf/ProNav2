@@ -11,6 +11,7 @@ import ProSQueue from "../components/ProS/ProSQueue";
 import ProSSettings from "../components/ProS/ProSSettings";
 import ProSExternal from "../components/ProS/ProSExternal";
 import { ProSNetworkList } from "../components/ProS/ProSNetworkList";
+import { ProSTankStatus } from "../components/ProS/ProSTankStatus";
 
 const proS = () => {
   const [menu, setMenu] = useRecoilState(proSNavState);
@@ -55,6 +56,11 @@ const proS = () => {
         {screen === "Wifi_List" && (
           <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
             <ProSNetworkList />
+          </div>
+        )}
+        {screen === "tank_status" && (
+          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+            <ProSTankStatus />
           </div>
         )}
       </div>

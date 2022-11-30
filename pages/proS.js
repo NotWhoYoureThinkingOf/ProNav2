@@ -12,6 +12,11 @@ import ProSSettings from "../components/ProS/ProSSettings";
 import ProSExternal from "../components/ProS/ProSExternal";
 import { ProSNetworkList } from "../components/ProS/ProSNetworkList";
 import { ProSTankStatus } from "../components/ProS/ProSTankStatus";
+import { ProSMaterialSelection } from "../components/ProS/ProSMaterialSelection";
+import { ProSMaterialChange } from "../components/ProS/ProSMaterialChange";
+import { ProSResinList } from "../components/ProS/ProSResinList";
+import { ProSMaterialChangeConfirmation } from "../components/ProS/ProSMaterialChangeConfirmation";
+import { ProSMaterialChangeConfirmed } from "../components/ProS/ProSMaterialChangeConfirmed";
 
 const proS = () => {
   const [menu, setMenu] = useRecoilState(proSNavState);
@@ -61,6 +66,31 @@ const proS = () => {
         {screen === "tank_status" && (
           <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
             <ProSTankStatus />
+          </div>
+        )}
+        {screen === "material_selection" && (
+          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+            <ProSMaterialSelection />
+          </div>
+        )}
+        {screen === "material_change" && (
+          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+            <ProSMaterialChange />
+          </div>
+        )}
+        {screen === "resin_list" && (
+          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+            <ProSResinList />
+          </div>
+        )}
+        {screen === "material_change_confirmation" && (
+          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+            <ProSMaterialChangeConfirmation />
+          </div>
+        )}
+        {screen === "material_change_confirmed" && (
+          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+            <ProSMaterialChangeConfirmed />
           </div>
         )}
       </div>

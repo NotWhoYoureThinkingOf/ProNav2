@@ -4,10 +4,12 @@ import ProSHomeButton from "./ProSHomeButton";
 import { useRecoilState } from "recoil";
 import { proSSSIDState } from "../../atoms/proSSSIDAtom";
 import { proSScreenState } from "../../atoms/proSScreenAtom";
+import { proSSelectedResin } from "../../atoms/proSSelectedResinAtom";
 
 const ProSHome = () => {
   const [network, setNetwork] = useRecoilState(proSSSIDState);
   const [screen, setScreen] = useRecoilState(proSScreenState);
+  const [selectedResin, setSelectedResin] = useRecoilState(proSSelectedResin);
 
   return (
     <div className="ProSHome w-full h-full">
@@ -59,7 +61,7 @@ const ProSHome = () => {
                     className="w-[47.32px] h-[32.05px]"
                   />
                 }
-                text="SprintRay Die and Model 2 Gray"
+                text={selectedResin}
                 status="HEALTHY"
                 SelectedResin
               />

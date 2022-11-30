@@ -74,7 +74,7 @@ export const ProSTankStatus = () => {
         <div className="ProS-Nickname-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] cursor-pointer flex-[.5] transition hover:brightness-125">
           <p className="text-[24px]">View Log</p>
         </div>
-        <div className="ProS-Nickname-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] cursor-pointer flex-[.5] transition hover:brightness-125">
+        <div className="ProS-Nickname-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] cursor-pointer flex-[.5] transition hover:brightness-125" onClick={() => setScreen("material_selection")}>
           <p className="text-[24px]">Change Resin Tank Material</p>
         </div>
       </div>

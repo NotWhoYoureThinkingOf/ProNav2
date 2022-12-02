@@ -7,7 +7,11 @@ const ProSHeader = () => {
   return (
     <div className="ProS-Header flex gap-4">
       <div
-        className="bg-gradient-to-b from-[#2BC25F] to-[#1B7D3D] h-[106px] w-[405px] rounded-b-2xl flex justify-center items-center cursor-pointer transition hover:brightness-125"
+        className={`bg-gradient-to-b ${
+          menu === "print"
+            ? "from-[#2BC25F] to-[#1B7D3D]"
+            : "from-[#6B6A6A] to-[#3D3D3D]"
+        } h-[106px] w-[405px] rounded-b-2xl flex justify-center items-center cursor-pointer transition hover:brightness-125`}
         onClick={() => setMenu("print")}
       >
         <p className="text-[40px] font-bold">Print</p>
@@ -16,16 +20,24 @@ const ProSHeader = () => {
         <p>Queue</p>
       </div> */}
       <div
-        className="bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] h-[106px] w-[405px] text-[40px] font-bold rounded-b-2xl flex justify-center items-center cursor-pointer transition hover:brightness-125"
+        className={`bg-gradient-to-b ${
+          menu === "history"
+            ? "from-[#2BC25F] to-[#1B7D3D]"
+            : "from-[#6B6A6A] to-[#3D3D3D]"
+        } h-[106px] w-[405px] rounded-b-2xl flex justify-center items-center cursor-pointer transition hover:brightness-125`}
         onClick={() => setMenu("history")}
       >
-        <p>History</p>
+        <p className="text-[40px] font-bold">History</p>
       </div>
       <div
-        className="bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] h-[106px] w-[405px] text-[40px] font-bold rounded-b-2xl flex justify-center items-center cursor-pointer transition hover:brightness-125"
+        className={`bg-gradient-to-b ${
+          menu === "settings"
+            ? "from-[#2BC25F] to-[#1B7D3D]"
+            : "from-[#6B6A6A] to-[#3D3D3D]"
+        } h-[106px] w-[405px] rounded-b-2xl flex justify-center items-center cursor-pointer transition hover:brightness-125`}
         onClick={() => setMenu("settings")}
       >
-        <p>Settings</p>
+        <p className="text-[40px] font-bold">Settings</p>
       </div>
     </div>
   );

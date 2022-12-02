@@ -2,9 +2,11 @@ import React from "react";
 import { ChevronLeft } from "@material-ui/icons";
 import { useRecoilState } from "recoil";
 import { proSScreenState } from "../../atoms/proSScreenAtom";
+import { proSSelectedResin } from "../../atoms/proSSelectedResinAtom";
 
 export const ProSTankStatus = () => {
   const [screen, setScreen] = useRecoilState(proSScreenState);
+  const [selectedResin, setSelectedResin] = useRecoilState(proSSelectedResin);
 
   return (
     <div className="ProS-Tank-Status-Screen px-3">
@@ -66,7 +68,7 @@ export const ProSTankStatus = () => {
               alt="Resin in tank"
               className="w-[52px] h-[35px]"
             />
-            <p className="text-[30px]">SprintRay Die and Model 2 Gray</p>
+            <p className="text-[30px]">{selectedResin}</p>
           </div>
         </div>
       </div>
@@ -74,7 +76,10 @@ export const ProSTankStatus = () => {
         <div className="ProS-Nickname-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] cursor-pointer flex-[.5] transition hover:brightness-125">
           <p className="text-[24px]">View Log</p>
         </div>
-        <div className="ProS-Nickname-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] cursor-pointer flex-[.5] transition hover:brightness-125" onClick={() => setScreen("material_selection")}>
+        <div
+          className="ProS-Nickname-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] cursor-pointer flex-[.5] transition hover:brightness-125"
+          onClick={() => setScreen("material_selection")}
+        >
           <p className="text-[24px]">Change Resin Tank Material</p>
         </div>
       </div>

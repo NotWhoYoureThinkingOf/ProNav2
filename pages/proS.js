@@ -17,6 +17,9 @@ import { ProSMaterialChange } from "../components/ProS/ProSMaterialChange";
 import { ProSResinList } from "../components/ProS/ProSResinList";
 import { ProSMaterialChangeConfirmation } from "../components/ProS/ProSMaterialChangeConfirmation";
 import { ProSMaterialChangeConfirmed } from "../components/ProS/ProSMaterialChangeConfirmed";
+import { ProSHeating } from "../components/ProS/ProSHeating";
+import { ProSPrinting } from "../components/ProS/ProSPrinting";
+import { ProSPrintComplete } from "../components/ProS/ProSPrintComplete";
 
 const proS = () => {
   const [menu, setMenu] = useRecoilState(proSNavState);
@@ -40,11 +43,45 @@ const proS = () => {
         />
       </div>
       <div className="ProS-ScreenCentered h-full w-full flex justify-center items-center">
-        <div className="ProS-WIP absolute left-[2%] bg-black border-2 border-white rounded-lg p-10 text-center">
-          <h3 className="text-[3rem] leading-[3.5rem] text-white">
-            Work In <br /> Progress
-          </h3>
-        </div>
+        {menu === "print" && (
+          <div
+            className="ProS-WIP absolute left-[2%] bg-black border-2 border-white rounded-lg p-10 text-center cursor-pointer"
+            onClick={() => setMenu("heating")}
+          >
+            <h3 className="text-[3rem] leading-[3.5rem] text-white">
+              Work In <br /> Progress
+            </h3>
+          </div>
+        )}
+
+        {menu === "heating" && (
+          <div className="flex flex-col">
+            <div
+              className="ProS-Finish-Heating absolute right-[2%] bg-black border-2 border-white rounded-lg p-10 text-center cursor-pointer"
+              onClick={() => setMenu("printing")}
+            >
+              <h3 className="text-[1.8rem] leading-[2rem] text-white">
+                Finish
+                <br />
+                Heating
+              </h3>
+            </div>
+          </div>
+        )}
+        {menu === "printing" && (
+          <div className="flex flex-col">
+            <div
+              className="ProS-Finish-Heating absolute right-[2%] bg-black border-2 border-white rounded-lg p-10 text-center cursor-pointer"
+              onClick={() => setMenu("complete")}
+            >
+              <h3 className="text-[1.8rem] leading-[2rem] text-white">
+                Finish
+                <br />
+                Printing
+              </h3>
+            </div>
+          </div>
+        )}
         {/* Printer Screen */}
         {screen === "normal" && (
           <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
@@ -55,6 +92,9 @@ const proS = () => {
               {menu === "queue" && <ProSQueue />}
               {menu === "settings" && <ProSSettings />}
               {menu === "external" && <ProSExternal />}
+              {menu === "heating" && <ProSHeating />}
+              {menu === "printing" && <ProSPrinting />}
+              {menu === "complete" && <ProSPrintComplete />}
             </div>
           </div>
         )}

@@ -30,7 +30,10 @@ export const ProSPrintComplete = () => {
           </p>
         </div>
         <div className="ProS-Complete-Buttons flex gap-4 w-[95%] mt-16">
-          <div className="ProS-Complete-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] flex flex-[.33] items-center justify-center cursor-pointer transition hover:brightness-125">
+          <div
+            className="ProS-Complete-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] flex flex-[.33] items-center justify-center cursor-pointer transition hover:brightness-125"
+            onClick={() => setMenu("negative")}
+          >
             <div className="absolute left-[5%]">
               <ThumbDown style={{ fontSize: "2.8rem", color: "#FF0423" }} />
             </div>
@@ -43,7 +46,10 @@ export const ProSPrintComplete = () => {
           >
             <p className="text-[24px] select-none">Dismiss</p>
           </div>
-          <div className="ProS-Complete-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] flex flex-[.33] items-center justify-center cursor-pointer transition hover:brightness-125">
+          <div
+            className="ProS-Complete-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] flex flex-[.33] items-center justify-center cursor-pointer transition hover:brightness-125"
+            onClick={() => setMenu("thank_you")}
+          >
             <div className="absolute left-[5%]">
               <ThumbUp style={{ fontSize: "2.8rem", color: "#28B358" }} />
             </div>

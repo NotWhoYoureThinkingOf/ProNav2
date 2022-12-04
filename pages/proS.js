@@ -20,6 +20,9 @@ import { ProSMaterialChangeConfirmed } from "../components/ProS/ProSMaterialChan
 import { ProSHeating } from "../components/ProS/ProSHeating";
 import { ProSPrinting } from "../components/ProS/ProSPrinting";
 import { ProSPrintComplete } from "../components/ProS/ProSPrintComplete";
+import { ProSThankYou } from "../components/ProS/ProSThankYou";
+import { ProSPrintNegative } from "../components/ProS/ProSPrintNegative";
+import { ProSPrintIssue } from "../components/ProS/ProSPrintIssue";
 
 const proS = () => {
   const [menu, setMenu] = useRecoilState(proSNavState);
@@ -49,7 +52,7 @@ const proS = () => {
             onClick={() => setMenu("heating")}
           >
             <h3 className="text-[3rem] leading-[3.5rem] text-white">
-              Work In <br /> Progress
+              Send <br /> Print
             </h3>
           </div>
         )}
@@ -85,7 +88,10 @@ const proS = () => {
         {/* Printer Screen */}
         {screen === "normal" && (
           <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
-            <ProSHeader />
+            {menu !== "thank_you" &&
+              menu !== "negative" &&
+              menu !== "issue" && <ProSHeader />}
+
             <div className="h-[86.5%]">
               {menu === "print" && <ProSHome />}
               {menu === "history" && <ProSHistory />}
@@ -95,6 +101,9 @@ const proS = () => {
               {menu === "heating" && <ProSHeating />}
               {menu === "printing" && <ProSPrinting />}
               {menu === "complete" && <ProSPrintComplete />}
+              {menu === "thank_you" && <ProSThankYou />}
+              {menu === "negative" && <ProSPrintNegative />}
+              {menu === "issue" && <ProSPrintIssue />}
             </div>
           </div>
         )}

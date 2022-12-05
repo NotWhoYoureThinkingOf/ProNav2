@@ -7,6 +7,8 @@ import PC2Home from "../components/ProCure2/PC2Home";
 import PC2Settings from "../components/ProCure2/PC2Settings";
 import PC2Wifi from "../components/ProCure2/PC2Wifi";
 import PC2Account from "../components/ProCure2/PC2Account";
+import { PC2ZoneSelect } from "../components/ProCure2/PC2ZoneSelect";
+import { PC2ZoneHeader } from "../components/ProCure2/PC2ZoneHeader";
 
 const proCure2 = () => {
   const [menu, setMenu] = useRecoilState(proCure2NavState);
@@ -66,6 +68,14 @@ const proCure2 = () => {
                 <PC2Header />
               </div>
               <PC2Account />
+            </div>
+          )}
+          {menu === "zone" && (
+            <div className="Procure2-Container text-white h-full flex flex-col gap-8">
+              <div className="ProCure2-Container-Header">
+                <PC2ZoneHeader />
+              </div>
+              <PC2ZoneSelect />
             </div>
           )}
         </div>

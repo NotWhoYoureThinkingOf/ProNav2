@@ -9,7 +9,7 @@ export default function Home() {
         <link rel="icon" href="/sprintray-icon.png" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:site_name" content="https://pro-nav2.vercel.app/" />
+        <meta property="og:site_name" content="SprintRay ProNav Guide" />
         <meta
           property="og:description"
           content="An interactive guide to learning how navigate and use SprintRay products"

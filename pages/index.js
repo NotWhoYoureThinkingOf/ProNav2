@@ -12,7 +12,7 @@ export default function Home() {
         <meta property="og:site_name" content="SprintRay ProNav Guide" />
         <meta
           property="og:description"
-          content="An interactive guide to learning how navigate and use SprintRay products"
+          content="An interactive guide to learning how to navigate and use SprintRay products"
         />
         <meta property="og:image" content="/sprintray-icon.png" />
       </Head>

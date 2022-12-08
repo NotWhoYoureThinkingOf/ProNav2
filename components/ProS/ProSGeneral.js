@@ -1,6 +1,9 @@
 import React from "react";
+import { useRecoilState } from "recoil";
+import { proSNavState } from "../../atoms/proSNavAtom";
 
 const ProSGeneral = () => {
+  const [menu, setMenu] = useRecoilState(proSNavState);
   return (
     <div className="ProS-General px-3">
       <div className="ProS-General-About">
@@ -13,7 +16,10 @@ const ProSGeneral = () => {
           <li className="text-[24px]">wired MAC: f6:c5:8a:a5:2c:12</li>
           <li className="text-[24px]">Nick Name: Pro S</li>
         </ul>
-        <div className="ProS-Nickname-Button bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] cursor-pointer transition hover:brightness-125">
+        <div
+          className="ProS-Nickname-Button bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 rounded-lg tracking-[.02em] cursor-pointer transition hover:brightness-125"
+          onClick={() => setMenu("nickname")}
+        >
           <p className="text-[24px]">Change Printer Nickname</p>
         </div>
         <div className="ProS-Settings-Line border-b-[1px] border-white w-full opacity-50 mt-8 mb-6"></div>

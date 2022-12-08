@@ -5,11 +5,13 @@ import { useRecoilState } from "recoil";
 import { proSSSIDState } from "../../atoms/proSSSIDAtom";
 import { proSScreenState } from "../../atoms/proSScreenAtom";
 import { proSSelectedResin } from "../../atoms/proSSelectedResinAtom";
+import { proSNicknameState } from "../../atoms/proSNicknameState";
 
 const ProSHome = () => {
   const [network, setNetwork] = useRecoilState(proSSSIDState);
   const [screen, setScreen] = useRecoilState(proSScreenState);
   const [selectedResin, setSelectedResin] = useRecoilState(proSSelectedResin);
+  const [nickname, setNickname] = useRecoilState(proSNicknameState);
 
   return (
     <div className="ProSHome w-full h-full">
@@ -19,11 +21,11 @@ const ProSHome = () => {
             <div className="">
               <img src="ProS-Print.svg" className="w-[323px] h-[440px]" />
             </div>
-            <div className="ProS-Left-Printer-Info flex gap-8 border-2 border-[#333333] w-4/5 h-[103px] rounded-lg overflow-hidden">
-              <div className="flex-[.05] bg-gradient-to-b from-[#2BC25F] to-[#1B7D3D] h-full"></div>
-              <div className="flex-[.95] flex flex-col">
-                <h4 className="text-[36px] font-bold tracking-[1px]">
-                  Pro S Printer
+            <div className="ProS-Left-Printer-Info flex gap-6 border-2 border-[#333333] w-4/5 h-[103px] rounded-lg overflow-hidden">
+              <div className="bg-gradient-to-b from-[#2BC25F] to-[#1B7D3D] h-full w-2"></div>
+              <div className="flex flex-col translate-y-2">
+                <h4 className="text-[30px] font-bold tracking-[1px] max-w-[17rem]">
+                  {nickname}
                 </h4>
                 <p className="text-[24px] text-[#999999]">PS95152619845</p>
               </div>

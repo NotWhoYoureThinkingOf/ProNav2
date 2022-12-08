@@ -25,6 +25,7 @@ import { ProSPrintNegative } from "../components/ProS/ProSPrintNegative";
 import { ProSPrintIssue } from "../components/ProS/ProSPrintIssue";
 import { ProSSleeping } from "../components/ProS/ProSSleeping";
 import { ProSWakeUp } from "../components/ProS/ProSWakeUp";
+import { ProSNickname } from "../components/ProS/ProSNickname";
 
 const proS = () => {
   const [menu, setMenu] = useRecoilState(proSNavState);
@@ -94,7 +95,8 @@ const proS = () => {
               menu !== "negative" &&
               menu !== "issue" &&
               menu !== "sleeping" &&
-              menu !== "wake" && <ProSHeader />}
+              menu !== "wake" &&
+              menu !== "nickname" && <ProSHeader />}
 
             <div className="h-[86.5%]">
               {menu === "print" && <ProSHome />}
@@ -110,6 +112,7 @@ const proS = () => {
               {menu === "issue" && <ProSPrintIssue />}
               {menu === "sleeping" && <ProSSleeping />}
               {menu === "wake" && <ProSWakeUp />}
+              {menu === "nickname" && <ProSNickname />}
             </div>
           </div>
         )}

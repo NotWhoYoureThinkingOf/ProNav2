@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { ProSBusinessToggles } from "./ProSBusinessToggles";
+import { useRecoilState } from "recoil";
+import { proSNavState } from "../../atoms/proSNavAtom";
 
 export const ProSBusinessHours = () => {
   const [disabled, setDisabled] = useState(true);
   const [monday, setMonday] = useState(false);
+  const [menu, setMenu] = useRecoilState(proSNavState);
   return (
     <div className="ProS-Business-Hours-Screen px-3">
       <div className="ProS-Business-Hours">
@@ -26,7 +29,10 @@ export const ProSBusinessHours = () => {
               power.
             </p>
           </div>
-          <div className="ProS-Business-Hours-Sleep-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 mt-[4.5rem] rounded-lg tracking-[.02em] cursor-pointer transition hover:brightness-125">
+          <div
+            className="ProS-Business-Hours-Sleep-Button relative bg-gradient-to-b from-[#6B6A6A] to-[#3D3D3D] text-center py-5 mt-[4.5rem] rounded-lg tracking-[.02em] cursor-pointer transition hover:brightness-125"
+            onClick={() => setMenu("sleeping")}
+          >
             <p className="text-[24px]">Sleep Now</p>
           </div>
         </div>

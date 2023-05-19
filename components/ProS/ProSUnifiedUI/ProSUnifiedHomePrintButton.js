@@ -10,7 +10,7 @@ export const ProSUnifiedHomePrintButton = () => {
   const [unifiedUI, setUnifiedUI] = useRecoilState(proSUnifiedUIState);
   return (
     <div className="ProS-WIP absolute left-[2%] bg-black border-2 border-white rounded-lg p-8 text-center cursor-pointer">
-      <h3 className="text-[2.2rem] leading-[3rem] text-white select-none">
+      <h3 className="lg:text-[2.2rem] leading-[3rem] text-white select-none md:text-[1.6rem]">
         Send <br /> Print
       </h3>
     </div>

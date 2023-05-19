@@ -1,5 +1,5 @@
 import { PersonOutline, Wifi } from "@material-ui/icons";
-import React from "react";
+import React, { useEffect } from "react";
 import ProSHomeButton from "./ProSHomeButton";
 import { useRecoilState } from "recoil";
 import { proSSSIDState } from "../../atoms/proSSSIDAtom";

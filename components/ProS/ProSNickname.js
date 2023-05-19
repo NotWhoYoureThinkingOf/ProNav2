@@ -8,12 +8,10 @@ import { proSNicknameState } from "../../atoms/proSNicknameState";
 export const ProSNickname = () => {
   const [menu, setMenu] = useRecoilState(proSNavState);
   const [nickname, setNickname] = useRecoilState(proSNicknameState);
-
+  const [input, setInput] = useState("");
   useEffect(() => {
     setNickname(input);
   }, input);
-
-  const [input, setInput] = useState("");
 
   return (
     <div className="ProS-Nickname">

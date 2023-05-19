@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './OtherStyles.css';
+
 .slick-slider, .slick-initialized, .slick-list, .slick-track, .slick-slide, .slick-slide div {
   height:100%;
   display:flex;
@@ -42,6 +44,10 @@
   display:none;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @layer components {
   .navBtn {
     @apply hidden h-6 md:inline-flex cursor-pointer hover:scale-125 transition-all duration-150 ease-out;
@@ -69,6 +75,10 @@
 
   .proSToggleSwitch {
     @apply w-[6.5rem] h-12 rounded-full p-0 bg-[#1B7D3D] cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent
+  }
+
+  .proSScreenStyle {
+    @apply z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative scale-75 text-white px-4
   }
 
   .hoverBtn {

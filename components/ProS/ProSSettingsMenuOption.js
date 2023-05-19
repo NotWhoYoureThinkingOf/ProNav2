@@ -11,8 +11,6 @@ const ProSSettingsMenuOption = ({ Icon, submenu, img, Custom }) => {
     setMenuText(selectedMenu.current.innerText);
   }, [settingsMenu]);
 
-  console.log("settingsMenu", settingsMenu);
-
   return (
     <div
       className={`flex items-center gap-4 border-2 border-[#555555] cursor-pointer w-full pr-1 ${

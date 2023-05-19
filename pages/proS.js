@@ -26,10 +26,17 @@ import { ProSPrintIssue } from "../components/ProS/ProSPrintIssue";
 import { ProSSleeping } from "../components/ProS/ProSSleeping";
 import { ProSWakeUp } from "../components/ProS/ProSWakeUp";
 import { ProSNickname } from "../components/ProS/ProSNickname";
+import { proSUnifiedUIState } from "../atoms/proSUnfiedUIState";
+import { ProSHomePrintButton } from "../components/ProS/ProSLegacy/ProSHomePrintButton";
+import { ProSUnifiedHomePrintButton } from "../components/ProS/ProSUnifiedUI/ProSUnifiedHomePrintButton";
+import { ProSHomeChangeUIButton } from "../components/ProS/ProSLegacy/ProSHomeChangeUIButton";
+import { ProSUnifiedHomeChangeUIButton } from "../components/ProS/ProSUnifiedUI/ProSUnifiedHomeChangeUIButton";
+import { ProSUnifiedHome } from "../components/ProS/ProSUnifiedUI/ProSUnifiedHome";
 
 const proS = () => {
   const [menu, setMenu] = useRecoilState(proSNavState);
   const [screen, setScreen] = useRecoilState(proSScreenState);
+  const [unifiedUI, setUnifiedUI] = useRecoilState(proSUnifiedUIState);
 
   return (
     <div className="ProS font-Roboto relative w-full h-screen overflow-hidden flex justify-center bg-[#111]">
@@ -49,15 +56,19 @@ const proS = () => {
         />
       </div>
       <div className="ProS-ScreenCentered h-full w-full flex justify-center items-center">
-        {menu === "print" && (
-          <div
-            className="ProS-WIP absolute left-[2%] bg-black border-2 border-white rounded-lg p-10 text-center cursor-pointer"
-            onClick={() => setMenu("heating")}
-          >
-            <h3 className="text-[3rem] leading-[3.5rem] text-white">
-              Send <br /> Print
-            </h3>
-          </div>
+        {(menu === "print" || menu === "unifiedPrint") && (
+          <>
+            {unifiedUI ? (
+              <ProSUnifiedHomePrintButton />
+            ) : (
+              <ProSHomePrintButton />
+            )}
+            {unifiedUI ? (
+              <ProSUnifiedHomeChangeUIButton />
+            ) : (
+              <ProSHomeChangeUIButton />
+            )}
+          </>
         )}
 
         {menu === "heating" && (
@@ -90,15 +101,16 @@ const proS = () => {
         )}
         {/* Printer Screen */}
         {screen === "normal" && (
-          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+          <div className="ProS-Screen no-scrollbar proSScreenStyle">
             {menu !== "thank_you" &&
               menu !== "negative" &&
               menu !== "issue" &&
               menu !== "sleeping" &&
               menu !== "wake" &&
-              menu !== "nickname" && <ProSHeader />}
+              menu !== "nickname" &&
+              !unifiedUI && <ProSHeader />}
 
-            <div className="h-[86.5%]">
+            <div className={!unifiedUI ? "h-[86.5%]" : "h-full"}>
               {menu === "print" && <ProSHome />}
               {menu === "history" && <ProSHistory />}
               {menu === "queue" && <ProSQueue />}
@@ -113,41 +125,42 @@ const proS = () => {
               {menu === "sleeping" && <ProSSleeping />}
               {menu === "wake" && <ProSWakeUp />}
               {menu === "nickname" && <ProSNickname />}
+              {menu === "unifiedPrint" && unifiedUI && <ProSUnifiedHome />}
             </div>
           </div>
         )}
         {screen === "Wifi_List" && (
-          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+          <div className="ProS-Screen no-scrollbar proSScreenStyle">
             <ProSNetworkList />
           </div>
         )}
         {screen === "tank_status" && (
-          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+          <div className="ProS-Screen no-scrollbar proSScreenStyle">
             <ProSTankStatus />
           </div>
         )}
         {screen === "material_selection" && (
-          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+          <div className="ProS-Screen no-scrollbar proSScreenStyle">
             <ProSMaterialSelection />
           </div>
         )}
         {screen === "material_change" && (
-          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+          <div className="ProS-Screen no-scrollbar proSScreenStyle">
             <ProSMaterialChange />
           </div>
         )}
         {screen === "resin_list" && (
-          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+          <div className="ProS-Screen no-scrollbar proSScreenStyle">
             <ProSResinList />
           </div>
         )}
         {screen === "material_change_confirmation" && (
-          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+          <div className="ProS-Screen no-scrollbar proSScreenStyle">
             <ProSMaterialChangeConfirmation />
           </div>
         )}
         {screen === "material_change_confirmed" && (
-          <div className="ProS-Screen z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative no-scrollbar scale-75 text-white px-4">
+          <div className="ProS-Screen no-scrollbar proSScreenStyle">
             <ProSMaterialChangeConfirmed />
           </div>
         )}

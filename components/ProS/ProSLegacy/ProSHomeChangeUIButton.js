@@ -19,7 +19,7 @@ export const ProSHomeChangeUIButton = () => {
         setUnifiedMenu("unifiedPrint");
       }}
     >
-      <h3 className="lg:text-[2.2rem] leading-[3rem] text-white md:text-[1.6rem]">
+      <h3 className="3xl:text-[2.2rem] leading-[3rem] text-white md:text-[1.6rem]">
         Change To <br /> Unified UI <br />
         <span className="text-sm">(Under Construction)</span>
       </h3>

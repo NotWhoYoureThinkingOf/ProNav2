@@ -14,7 +14,7 @@ export const ProSUnifiedHomeChangeUIButton = () => {
         setMenu("print");
       }}
     >
-      <h3 className="lg:text-[2.2rem] text-[2.2rem] leading-[3rem] text-white md:text-[1.6rem]">
+      <h3 className="3xl:text-[2.2rem] text-[2.2rem] leading-[3rem] text-white md:text-[1.6rem]">
         Change To <br /> Legacy UI
       </h3>
     </div>

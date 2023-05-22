@@ -10,6 +10,7 @@ import { ProSUnifiedDeviceInfo } from "./ProSUnifiedDeviceInfo";
 import { ProSUnifiedSettings } from "./ProSUnifiedSettings";
 import { ProSUnifiedQueue } from "./ProSUnifiedQueue";
 import { ProSUnifiedAccount } from "./ProSUnifiedAccount";
+import { ProSUnifiedSettingsGeneral } from "./ProSUnifiedSettingsGeneral";
 
 export const ProSUnifiedHome = () => {
   const [screen, setScreen] = useRecoilState(proSScreenState);
@@ -26,20 +27,34 @@ export const ProSUnifiedHome = () => {
         <ProSUnifiedNavBar />
       </div>
       <div className="ProSUnifiedHomeScreen w-full overflow-y-scroll">
+        {/* Home */}
         {unifiedMenu === "unifiedPrint" && unifiedUI && <ProSUnifiedMain />}
+
+        {/* Device Status */}
         {unifiedMenu === "unifiedInformation" && unifiedUI && (
           <ProSUnifiedDeviceInfo />
         )}
+
+        {/* Settings */}
         {unifiedMenu === "unifiedSettings" && unifiedUI && (
           <div>
             <ProSUnifiedSettings />
           </div>
         )}
+        {unifiedMenu === "unifiedSettingsGeneral" && unifiedUI && (
+          <div>
+            <ProSUnifiedSettingsGeneral />
+          </div>
+        )}
+
+        {/* Queue */}
         {unifiedMenu === "unifiedQueue" && unifiedUI && (
           <div>
             <ProSUnifiedQueue />
           </div>
         )}
+
+        {/* Account */}
         {unifiedMenu === "unifiedAccount" && unifiedUI && (
           <div>
             <ProSUnifiedAccount />

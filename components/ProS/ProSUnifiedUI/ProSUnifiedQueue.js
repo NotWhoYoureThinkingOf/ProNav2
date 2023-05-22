@@ -11,7 +11,7 @@ export const ProSUnifiedQueue = () => {
           title="Patient 1 NightGuard"
           date="05/22"
           time="12:47pm"
-          resin="SprintRay NighGuard Flex"
+          resin="SprintRay NightGuard Flex"
           printTime="1h 14m"
           thickness="100"
         />

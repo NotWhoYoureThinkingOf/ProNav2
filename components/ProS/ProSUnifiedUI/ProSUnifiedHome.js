@@ -12,6 +12,7 @@ import { ProSUnifiedQueue } from "./ProSUnifiedQueue";
 import { ProSUnifiedAccount } from "./ProSUnifiedAccount";
 import { ProSUnifiedSettingsGeneral } from "./ProSUnifiedSettingsGeneral";
 import { ProSUnifiedSettingsSoftware } from "./ProSUnifiedSettingsSoftware";
+import { ProSUnifiedSettingsPrinter } from "./ProSUnifiedSettingsPrinter";
 
 export const ProSUnifiedHome = () => {
   const [screen, setScreen] = useRecoilState(proSScreenState);
@@ -50,6 +51,11 @@ export const ProSUnifiedHome = () => {
         {unifiedMenu === "unifiedSettingsSoftware" && unifiedUI && (
           <div>
             <ProSUnifiedSettingsSoftware />
+          </div>
+        )}
+        {unifiedMenu === "unifiedSettingsPrinter" && unifiedUI && (
+          <div>
+            <ProSUnifiedSettingsPrinter />
           </div>
         )}
 

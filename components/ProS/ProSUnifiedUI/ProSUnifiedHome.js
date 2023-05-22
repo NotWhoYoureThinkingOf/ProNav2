@@ -22,10 +22,10 @@ export const ProSUnifiedHome = () => {
 
   return (
     <div className="ProSUnifiedHome flex h-full">
-      <div className="ProSUnifiedHomeNavBar">
+      <div className="ProSUnifiedHomeNavBar overflow-y-scroll">
         <ProSUnifiedNavBar />
       </div>
-      <div className="ProSUnifiedHomeScreen w-full">
+      <div className="ProSUnifiedHomeScreen w-full overflow-y-scroll">
         {unifiedMenu === "unifiedPrint" && unifiedUI && <ProSUnifiedMain />}
         {unifiedMenu === "unifiedInformation" && unifiedUI && (
           <ProSUnifiedDeviceInfo />

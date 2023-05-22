@@ -65,6 +65,16 @@ export const ProSUnifiedNavBar = () => {
           style={{ height: "2.8rem", width: "2.8rem", objectFit: "contain" }}
         />
       </div>
+      <div
+        className="py-14 flex justify-center mr-8 cursor-pointer"
+        onClick={() => setUnifiedMenu("unifiedAccount")}
+      >
+        <img
+          src="/User.png"
+          alt=""
+          style={{ height: "2.8rem", width: "2.8rem", objectFit: "contain" }}
+        />
+      </div>
     </div>
   );
 };

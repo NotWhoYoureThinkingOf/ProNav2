@@ -14,7 +14,7 @@ export const ProSUnifiedSettings = () => {
         <div onClick={() => setUnifiedMenu("unifiedSettingsGeneral")}>
           <ProSUnifiedOption Enter title={"General"} />
         </div>
-        <div>
+        <div onClick={() => setUnifiedMenu("unifiedSettingsSoftware")}>
           <ProSUnifiedOption Enter title={"Software"} />
         </div>
         <div>

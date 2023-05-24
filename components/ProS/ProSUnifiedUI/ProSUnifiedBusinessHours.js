@@ -43,7 +43,6 @@ export const ProSUnifiedBusinessHours = () => {
               />
             </div>
           </div>
-          <p>test</p>
         </div>
       </div>
     </div>

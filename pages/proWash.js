@@ -28,7 +28,7 @@ const proWash = () => {
       <Head>
         <title>ProWash</title>
       </Head>
-      <Link href="/">
+      <Link href="/" legacyBehavior>
         <a className="absolute z-50 left-2 top-2">Back To Welcome Screen</a>
       </Link>
       <div className="w-full absolute h-full flex justify-center items-center pointer-events-none">

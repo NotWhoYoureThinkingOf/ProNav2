@@ -18,7 +18,7 @@ const MainSlider = () => {
     <div className="Slider h-full w-[90%] bg-opacity-50">
       <div className="h-full w-full">
         <Slider {...settings}>
-          <Link href="/proPrinter">
+          <Link href="/proPrinter" legacyBehavior>
             <a className="Slider1 h-full flex justify-center items-end">
               <img
                 src="/Pro95.png"
@@ -26,7 +26,7 @@ const MainSlider = () => {
               />
             </a>
           </Link>
-          <Link href="/proS">
+          <Link href="/proS" legacyBehavior>
             <a className="Slider1 h-full flex justify-center items-end">
               <img
                 src="/ProS.png"
@@ -34,7 +34,7 @@ const MainSlider = () => {
               />
             </a>
           </Link>
-          <Link href="/proWash">
+          <Link href="/proWash" legacyBehavior>
             <a className="Slider2 !flex justify-self-center self-end">
               <img
                 src="/ProWash.png"
@@ -42,7 +42,7 @@ const MainSlider = () => {
               />
             </a>
           </Link>
-          <Link href="/proCure">
+          <Link href="/proCure" legacyBehavior>
             <a className="Slider2 !flex justify-self-center self-end">
               <img
                 src="/ProCure.png"
@@ -50,7 +50,7 @@ const MainSlider = () => {
               />
             </a>
           </Link>
-          <Link href="/proCure2">
+          <Link href="/proCure2" legacyBehavior>
             <a className="Slider2 !flex justify-self-center self-end">
               <img
                 src="/ProCure2.png"

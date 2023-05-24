@@ -53,7 +53,7 @@ const proCure2 = () => {
       <Head>
         <title>ProCure 2</title>
       </Head>
-      <Link href="/">
+      <Link href="/" legacyBehavior>
         <a className="ProCure2-BackToWelcome absolute z-50 left-2 top-2 text-white">
           Back To Welcome Screen
         </a>

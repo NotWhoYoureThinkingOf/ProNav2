@@ -20,7 +20,7 @@ const proPrinter = () => {
       <Head>
         <title>Pro Printer</title>
       </Head>
-      <Link href="/">
+      <Link href="/" legacyBehavior>
         <a className="ProPrinter-BackToWelcome absolute z-50 left-2 top-2 text-white">
           Back To Welcome Screen
         </a>

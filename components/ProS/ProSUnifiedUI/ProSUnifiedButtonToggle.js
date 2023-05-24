@@ -18,7 +18,8 @@ export const ProSUnifiedButtonToggle = ({
   );
   return (
     <div
-      className={`ProSUnifiedButtonToggle h-[${height}] flex justify-center`}
+      className={`ProSUnifiedButtonToggle flex justify-center`}
+      style={{ height }}
     >
       <div className="bg-[#191919] w-[700px] rounded-lg flex p-1">
         <div

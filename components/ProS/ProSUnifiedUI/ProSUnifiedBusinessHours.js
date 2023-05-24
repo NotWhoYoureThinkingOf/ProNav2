@@ -34,7 +34,6 @@ export const ProSUnifiedBusinessHours = () => {
             <h4>Business Hours</h4>
             <div className="w-[290px]">
               <ProSUnifiedButtonToggle
-                height="80px"
                 leftText={"Enabled"}
                 rightText={"Disabled"}
                 leftFunction={() => setEnabled(true)}

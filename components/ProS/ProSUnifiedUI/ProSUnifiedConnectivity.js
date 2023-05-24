@@ -20,7 +20,6 @@ export const ProSUnifiedConnectivity = () => {
           <ProSUnifiedButtonToggle
             leftText="Local Network"
             rightText="Printer Hotspot"
-            height="80px"
             leftFunction={() => setConnection("local")}
             rightFunction={() => setConnection("hotspot")}
             screen="Connectivity"

@@ -20,10 +20,10 @@ export const ProSUnifiedSettings = () => {
         <div onClick={() => setUnifiedMenu("unifiedSettingsPrinter")}>
           <ProSUnifiedOption Enter title={"Printer"} />
         </div>
-        <div>
+        <div onClick={() => setUnifiedMenu("unifiedSettingsConnectivity")}>
           <ProSUnifiedOption Enter title={"Connectivity"} />
         </div>
-        <div>
+        <div onClick={() => setUnifiedMenu("unifiedSettingsBusinessHours")}>
           <ProSUnifiedOption Enter title={"Business Hours"} />
         </div>
       </div>

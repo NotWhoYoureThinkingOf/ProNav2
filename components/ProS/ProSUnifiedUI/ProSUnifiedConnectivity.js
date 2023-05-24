@@ -23,6 +23,7 @@ export const ProSUnifiedConnectivity = () => {
             leftFunction={() => setConnection("local")}
             rightFunction={() => setConnection("hotspot")}
             screen="Connectivity"
+            height="80px"
           />
         </div>
         <div className="InternetConnection mt-10 mb-12">

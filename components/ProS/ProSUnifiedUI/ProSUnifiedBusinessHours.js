@@ -39,6 +39,7 @@ export const ProSUnifiedBusinessHours = () => {
                 leftFunction={() => setEnabled(true)}
                 rightFunction={() => setEnabled(false)}
                 screen="BusinessHours"
+                height="80px"
               />
             </div>
           </div>

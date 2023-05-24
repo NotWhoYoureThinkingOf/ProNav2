@@ -73,7 +73,6 @@ export const ProSUnifiedConnectivity = () => {
           </div>
         </div>
       </div>
-      <p>test</p>
     </div>
   );
 };

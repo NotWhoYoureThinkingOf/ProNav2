@@ -4,6 +4,7 @@ import { proSUnifiedBusinessHoursEnabledState } from "../../../atoms/proSUnified
 import { ProSUnifiedScreenHeader } from "./ProSUnifiedScreenHeader";
 import { ProSUnifiedOption } from "./ProSUnifiedOption";
 import { ProSUnifiedButtonToggle } from "./ProSUnifiedButtonToggle";
+import { ProSUnifiedBottomButton } from "./ProSUnifiedBottomButton";
 
 export const ProSUnifiedBusinessHours = () => {
   const [enabled, setEnabled] = useRecoilState(
@@ -11,13 +12,13 @@ export const ProSUnifiedBusinessHours = () => {
   );
 
   return (
-    <div className="ProSUnifiedBusinessHours">
+    <div className="ProSUnifiedBusinessHours relative pb-[13rem]">
       <ProSUnifiedScreenHeader
         GoBack
         location={"unifiedSettings"}
         title={"Business Hours"}
       />
-      <div className="BusinessHoursContent flex flex-col items-center pt-14">
+      <div className="BusinessHoursContent flex flex-col pt-14">
         <div className="BusinessHoursText opacity-[65%] text-[24px] w-[1047px] flex flex-col gap-6 leading-[28px]">
           <p>
             Set your schedule so Pro S is always ready to print when you need it
@@ -43,8 +44,40 @@ export const ProSUnifiedBusinessHours = () => {
               />
             </div>
           </div>
+          {enabled && (
+            <div className="BusinessDays flex flex-col gap-2 mt-6">
+              <ProSUnifiedOption Enter title="Sunday" status="Closed" />
+              <ProSUnifiedOption
+                Enter
+                title="Monday"
+                status="8:00 AM - 5:00 PM"
+              />
+              <ProSUnifiedOption
+                Enter
+                title="Tuesday"
+                status="8:00 AM - 5:00 PM"
+              />
+              <ProSUnifiedOption
+                Enter
+                title="Wednesday"
+                status="9:00 AM - 12:00 PM"
+              />
+              <ProSUnifiedOption
+                Enter
+                title="Thursday"
+                status="9:00 AM - 6:00 PM"
+              />
+              <ProSUnifiedOption
+                Enter
+                title="Friday"
+                status="8:00 AM - 4:00 PM"
+              />
+              <ProSUnifiedOption Enter title="Saturday" status="Closed" />
+            </div>
+          )}
         </div>
       </div>
+      {enabled && <ProSUnifiedBottomButton text="Sleep Now" />}
     </div>
   );
 };

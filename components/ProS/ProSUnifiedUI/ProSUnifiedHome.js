@@ -15,6 +15,7 @@ import { ProSUnifiedSettingsSoftware } from "./ProSUnifiedSettingsSoftware";
 import { ProSUnifiedSettingsPrinter } from "./ProSUnifiedSettingsPrinter";
 import { ProSUnifiedConnectivity } from "./ProSUnifiedConnectivity";
 import { ProSUnifiedBusinessHours } from "./ProSUnifiedBusinessHours";
+import { ProSUnifiedReadiness } from "./ProSUnifiedReadiness";
 
 export const ProSUnifiedHome = () => {
   const [screen, setScreen] = useRecoilState(proSScreenState);
@@ -39,7 +40,12 @@ export const ProSUnifiedHome = () => {
           <ProSUnifiedDeviceInfo />
         )}
 
-        {/* Settings */}
+        {/* Printing */}
+        {unifiedMenu === "unifiedReadiness" && unifiedUI && (
+          <ProSUnifiedReadiness />
+        )}
+
+        {/* Settings - Start */}
         {unifiedMenu === "unifiedSettings" && unifiedUI && (
           <div>
             <ProSUnifiedSettings />
@@ -60,16 +66,18 @@ export const ProSUnifiedHome = () => {
             <ProSUnifiedSettingsPrinter />
           </div>
         )}
-        {unifiedMenu === "unifiedSettingsConnectivity" && unifiedUI && (
-          <div>
-            <ProSUnifiedConnectivity />
-          </div>
-        )}
         {unifiedMenu === "unifiedSettingsBusinessHours" && unifiedUI && (
           <div>
             <ProSUnifiedBusinessHours />
           </div>
         )}
+        {/* Settings - Connectivity */}
+        {unifiedMenu === "unifiedSettingsConnectivity" && unifiedUI && (
+          <div>
+            <ProSUnifiedConnectivity />
+          </div>
+        )}
+        {/* Settings - End */}
 
         {/* Queue */}
         {unifiedMenu === "unifiedQueue" && unifiedUI && (

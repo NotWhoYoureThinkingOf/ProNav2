@@ -81,6 +81,10 @@
     @apply z-[100] bg-black rounded-2xl h-[799px] w-[1280px] border-4 border-white overflow-hidden relative scale-75 text-white px-4
   }
 
+  .proSReadinessTextStyle {
+    @apply w-[40px] h-[40px] flex justify-center items-center bg-white rounded-full text-black font-bold
+  }
+
   .hoverBtn {
     @apply p-[10px] bg-white bg-opacity-10 rounded-[5px] text-[1rem] font-bold transition cursor-pointer hover:bg-[#444]
   }

@@ -69,7 +69,9 @@ export const ProSUnifiedReadiness = () => {
           </div>
         </div>
       </div>
-      <ProSUnifiedBottomButton text="START PRINTING" />
+      <div className="" onClick={() => setUnifiedMenu("unifiedWarming")}>
+        <ProSUnifiedBottomButton text="START PRINTING" />
+      </div>
     </div>
   );
 };

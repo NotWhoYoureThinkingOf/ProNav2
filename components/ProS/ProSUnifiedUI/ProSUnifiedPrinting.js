@@ -12,6 +12,7 @@ export const ProSUnifiedPrinting = () => {
   const [layerCount, setLayerCount] = useState(1);
   const [maxLayer, setMaxLayer] = useState(3);
   const [printing, setPrinting] = useState(false);
+  const [printComplete, setPrintComplete] = useState(false);
   const totalProgress = useRef(null);
 
   useEffect(() => {
@@ -37,11 +38,12 @@ export const ProSUnifiedPrinting = () => {
             );
           }, 3000);
         } else {
+          setTimeout(() => setPrintComplete(true), 1000);
           setTimeout(() => setUnifiedMenu("unifiedPrintComplete"), 3000);
         }
       },
     });
-  });
+  }, [layerCount]);
 
   return (
     <div className="ProSUnifiedPrinting h-full">
@@ -105,10 +107,13 @@ export const ProSUnifiedPrinting = () => {
             )}
             <div
               className={`absolute h-full w-full bg-[#cc0033] rounded-md ${
-                layerCount === 0 && "!-translate-x-full"
-              } ${layerCount === 1 && "!translate-x-[-66%]"} ${
-                layerCount === 2 && "!translate-x-[-33%]"
-              } ${layerCount === 3 && "!translate-x-[0%]"}`}
+                layerCount === 0 && "!translate-x-[-100%]"
+              } ${layerCount === 1 && "!translate-x-[-100%]"} ${
+                layerCount === 2 && "!translate-x-[-66%]"
+              } ${layerCount === 3 && "!translate-x-[-33%]"}
+              ${
+                layerCount === maxLayer && printComplete && "!translate-x-[0%]"
+              }`}
             ></div>
           </div>
         </div>

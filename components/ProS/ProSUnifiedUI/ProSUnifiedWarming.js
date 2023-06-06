@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export const ProSUnifiedWarming = () => {
   const [unifiedMenu, setUnifiedMenu] = useRecoilState(proSUnifiedNavState);
-  const [temp, setTemp] = useState(27);
+  const [temp, setTemp] = useState(29);
 
   useEffect(() => {
     const tempIncrease = setInterval(() => setTemp(temp + 1), 5000);

@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export const ProSUnifiedWarming = () => {
   const [unifiedMenu, setUnifiedMenu] = useRecoilState(proSUnifiedNavState);
-  const [temp, setTemp] = useState(26);
+  const [temp, setTemp] = useState(27);
 
   useEffect(() => {
     const tempIncrease = setInterval(() => setTemp(temp + 1), 5000);
@@ -26,7 +26,7 @@ export const ProSUnifiedWarming = () => {
 
   return (
     <div className="ProSUnifiedWarming relative h-full">
-      <ProSUnifiedScreenHeader title="Print Job name" />
+      <ProSUnifiedScreenHeader title="Print Job Name" />
       <div className="WarmingContent flex items-start h-[650px] pt-[3rem] px-10">
         <div className="WarmingLeft flex flex-col gap-8 flex-[0.65]">
           <div className="WarmingText flex flex-col gap-4">

@@ -18,6 +18,7 @@ import { ProSUnifiedBusinessHours } from "./ProSUnifiedBusinessHours";
 import { ProSUnifiedReadiness } from "./ProSUnifiedReadiness";
 import { ProSUnifiedWarming } from "./ProSUnifiedWarming";
 import { ProSUnifiedPrinting } from "./ProSUnifiedPrinting";
+import { ProSUnifiedPrintComplete } from "./ProSUnifiedPrintComplete";
 
 export const ProSUnifiedHome = () => {
   const [screen, setScreen] = useRecoilState(proSScreenState);
@@ -51,6 +52,9 @@ export const ProSUnifiedHome = () => {
         )}
         {unifiedMenu === "unifiedPrinting" && unifiedUI && (
           <ProSUnifiedPrinting />
+        )}
+        {unifiedMenu === "unifiedPrintComplete" && unifiedUI && (
+          <ProSUnifiedPrintComplete />
         )}
 
         {/* Settings - Start */}

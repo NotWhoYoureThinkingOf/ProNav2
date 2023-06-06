@@ -1,10 +1,48 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useRecoilState } from "recoil";
+import { proSUnifiedNavState } from "../../../atoms/proSUnifiedNavAtom";
 import { ProSUnifiedScreenHeader } from "./ProSUnifiedScreenHeader";
 import { ProSUnifiedBottomButton } from "./ProSUnifiedBottomButton";
 import { WaterDropOutlined } from "@mui/icons-material";
 import { AccessAlarm } from "@material-ui/icons";
+import gsap from "gsap/dist/gsap";
 
 export const ProSUnifiedPrinting = () => {
+  const [unifiedMenu, setUnifiedMenu] = useRecoilState(proSUnifiedNavState);
+  const [layerCount, setLayerCount] = useState(1);
+  const [maxLayer, setMaxLayer] = useState(3);
+  const [printing, setPrinting] = useState(false);
+  const totalProgress = useRef(null);
+
+  useEffect(() => {
+    gsap.to(totalProgress.current, {
+      x: "0",
+      delay: 3,
+      duration: 15,
+      ease: "none",
+      onStart: () => setPrinting(true),
+      onComplete: () => {
+        if (layerCount < maxLayer) {
+          setTimeout(() => {
+            setLayerCount(layerCount + 1);
+            gsap.fromTo(
+              totalProgress.current,
+              { x: "-100%" },
+              {
+                x: "0",
+                delay: 0.5,
+                duration: 15,
+                ease: "none",
+              }
+            );
+          }, 3000);
+        } else {
+          setTimeout(() => setUnifiedMenu("unifiedPrintComplete"), 3000);
+        }
+      },
+    });
+  });
+
   return (
     <div className="ProSUnifiedPrinting h-full">
       <ProSUnifiedScreenHeader title="Print Job Name" />
@@ -47,11 +85,31 @@ export const ProSUnifiedPrinting = () => {
         </div>
         <div className="PrintingProgress flex flex-col gap-3 pt-12 pb-[11.5rem]">
           <div className="PrintingLayerCount flex h-[26px] text-[22px]">
-            <p>Layer 1/156</p>
+            <p>
+              Layer {layerCount}/{maxLayer} (Still being developed)
+            </p>
           </div>
-          <div className="PrintingLayerProgress bg-[#191919] h-[10px] rounded-3xl"></div>
-          <div className="PrintingTotalProgress bg-[#191919] h-[80px] rounded-md flex justify-start items-center">
-            <p className="text-[40px] px-6">Initializing...</p>
+          <div className="PrintingLayerProgress bg-[#191919] h-[10px] rounded-3xl relative overflow-hidden">
+            <div
+              className="absolute h-full w-full bg-[#cc0033] rounded-md -translate-x-full"
+              ref={totalProgress}
+            ></div>
+          </div>
+          <div className="PrintingTotalProgress bg-[#191919] h-[80px] rounded-md flex justify-start items-center relative overflow-hidden">
+            {!printing ? (
+              <p className="text-[40px] px-6 z-50">Initializing...</p>
+            ) : (
+              <p className="text-[40px] px-6 z-50 translate-x-[43.5rem]">
+                2h 36m remaining
+              </p>
+            )}
+            <div
+              className={`absolute h-full w-full bg-[#cc0033] rounded-md ${
+                layerCount === 0 && "!-translate-x-full"
+              } ${layerCount === 1 && "!translate-x-[-66%]"} ${
+                layerCount === 2 && "!translate-x-[-33%]"
+              } ${layerCount === 3 && "!translate-x-[0%]"}`}
+            ></div>
           </div>
         </div>
         <div className="PrintingButtons flex gap-[.6rem]">
